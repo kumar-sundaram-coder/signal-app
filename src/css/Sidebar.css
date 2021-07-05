@@ -1,0 +1,66 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.sidebar-header > .MuiAvatar-root {
+  width: 30px;
+  height: 30px;
+}
+.sidebar-input {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 5px;
+  border-radius: 33px;
+  width: 100%;
+}
+.sidebar-input > input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.sidebar-input > .MuiSvgIcon-root {
+  color: white;
+  margin-left: 5px;
+}
+.sidebar-chats {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 20px;
+}
+.sidebar-notes {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-items: center;
+}
+.sidebar-notes:hover {
+  background-color: rgba(151, 151, 151, 0.6);
+  cursor: pointer;
+}
+
+.sidebar-notesIcon {
+  padding: 5px;
+  background-color: rgb(160, 0, 0);
+  border-radius: 50px;
+  align-items: center;
+}
+
+.sidebar-notes > p {
+  color: white;
+  margin-left: 10px;
+}
+
+.sidebar-notesIcon > .MuiSvgIcon-root {
+  color: white;
+}
