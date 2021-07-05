@@ -27,3 +27,19 @@
   right: 0;
   bottom: -15px;
 }
+
+.sidebarChat-info > h3 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sidebarChat-info > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  max-height: 1.5rem;
+  line-height: 1.5;
+}
