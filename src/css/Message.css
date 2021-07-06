@@ -14,7 +14,7 @@
 }
 .message-content > span {
   color: lightgray;
-  text-decoration: underline gray 1px;
+  text-decoration: underline gray;
   /* border-bottom: 1px solid gray; */
 }
 .message-content > small {

@@ -1,0 +1,28 @@
+.login {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.login > img {
+  border-radius: 50%;
+  object-fit: contain;
+  margin-bottom: 50px;
+}
+
+.login > button {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 33px;
+  font-size: large;
+  background-color: rgb(65, 116, 255);
+}
+
+.login > button:hover {
+  color: rgb(65, 116, 255);
+  background-color: white;
+}
