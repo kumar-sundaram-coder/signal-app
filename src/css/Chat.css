@@ -25,7 +25,19 @@
   font-size: 1.3rem;
   font-weight: 500;
 }
-
+.chat-headerRight {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.chat-headerRight > .MuiSvgIcon-root {
+  font-size: xx-large;
+  margin-right: 5px;
+}
+.chat-headerRight > .MuiSvgIcon-root:hover {
+  cursor: pointer;
+  color: gray;
+}
 .chat-body {
   display: flex;
   flex-direction: column;
@@ -36,16 +48,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .message-header > .MuiAvatar-root {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+  align-items: center;
 }
 
-.message-header > h3 {
+.message-header > h5 {
+  align-items: center;
   font-size: 1.7rem;
   font-weight: 600;
 }
@@ -61,7 +75,7 @@
 
 .chat-footer > .MuiSvgIcon-root:hover {
   cursor: pointer;
-  color: yellow ;
+  color: yellow;
 }
 
 .chat-footer > form {

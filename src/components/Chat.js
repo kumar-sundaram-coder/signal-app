@@ -22,8 +22,10 @@ export default function Chat() {
       <div className="chat-body">
         <div className="message-header">
           <Avatar />
-          <h3>Chat Name</h3>
+          <h5>Chat Name</h5>
         </div>
+        <Message />
+        <Message />
         <Message />
       </div>
       <div className="chat-footer">
