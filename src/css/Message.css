@@ -1,0 +1,23 @@
+.message {
+  display: flex;
+  padding: 10px;
+}
+.message-content {
+  border-radius: 12px;
+  background-color: rgb(72, 72, 195);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 10px;
+  position: relative;
+}
+.message-content > span {
+  color: lightgray;
+  text-decoration: underline gray 1px;
+  /* border-bottom: 1px solid gray; */
+}
+.message-content > small {
+  position: absolute;
+  right: 0;
+  bottom: -18px;
+}

@@ -22,7 +22,7 @@ export default function Sidebar() {
         <Add
           style={{
             color: "white",
-            fontSize: "xx-large",
+            fontSize: "x-large",
             paddingLeft: "10px",
           }}
         />
