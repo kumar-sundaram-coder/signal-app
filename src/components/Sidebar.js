@@ -7,19 +7,58 @@ import SidebarChat from "./SidebarChat.js";
 import SpeakerNotesIcons from "@material-ui/icons/SpeakerNotes";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
-import { auth } from "../firebase";
+import db, { auth } from "../firebase";
 import Modal from "react-modal";
 import Input from "@material-ui/core/Input/Input";
 import IconButton from "@material-ui/core/IconButton/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+// import firebase from "firebase";
 
 export default function Sidebar() {
   const user = useSelector(selectUser);
   const [modal, setModal] = useState(false);
-  const [chatInput, setChatInput] = useState(null);
-  const [imageInput, setImageInput] = useState(
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Signal-Logo.svg/150px-Signal-Logo.svg.png"
-  );
+
+  let chatInput = null;
+  let imageInput = null;
+
+  let C="";
+  // imageInput =
+  //   "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Signal-Logo.svg/150px-Signal-Logo.svg.png";
+
+  function setChatInput(e) {
+    chatInput = e.target.value;
+    C = chatInput;
+    console.log(C);
+    console.log(chatInput);
+
+    // console.log(e.target.value);
+    // console.log(imageInput);
+  }
+  function setImageInput(e) {
+    imageInput = e.target.value;
+
+    console.log(imageInput);
+    // console.log(e.target.value);
+    // console.log(chatInput);
+  }
+
+  const handleAdd = (e) => {
+    console.log(chatInput);
+    console.log(C);
+    if (chatInput != null) {
+      // db.collection("chats").add({
+      //   chatName: chatInput,
+      //   chatImage: imageInput,
+      //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      // });
+      db.collection("chats").add({
+        chatName: chatInput,
+      });
+    }
+  };
+
+  // imageInput =
+  //   "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Signal-Logo.svg/150px-Signal-Logo.svg.png";
 
   return (
     <div className="sidebar">
@@ -47,6 +86,7 @@ export default function Sidebar() {
           }}
         />
         <Modal
+          ariaHideApp={false}
           isOpen={modal}
           onRequestClose={() => {
             setModal(false);
@@ -77,28 +117,24 @@ export default function Sidebar() {
           <div className="modal-info">
             <h3>Add New Chat Name</h3>
             <Input
+              type="text"
+              onChange={setChatInput}
+              className="name-input"
+              placeholder="Enter New Chat Name"
               required
               value={chatInput}
-              onChange={(e) => {
-                setChatInput(e.target.value);
-              }}
-              className="name-input"
-              type="text"
-              placeholder="Enter New Chat Name"
             />
+
             <h3>Add Profile Image(URL)</h3>
             <Input
-              required
-              value={imageInput}
-              onChange={(e) => {
-                setImageInput(e.target.value);
-              }}
-              className="name-input"
               type="text"
-              placeholder="Enter Chat Image(url)"
+              onChange={setImageInput}
+              className="name-input"
+              placeholder="Enter Profile Image URL (optional)"
+              value={imageInput}
             />
             <div className="modal-add">
-              <IconButton>
+              <IconButton onClick={handleAdd}>
                 <Add
                   style={{
                     fontSize: "xx-large",
