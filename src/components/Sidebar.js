@@ -21,14 +21,11 @@ export default function Sidebar() {
   let chatInput = null;
   let imageInput = null;
 
-  let C="";
   // imageInput =
   //   "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Signal-Logo.svg/150px-Signal-Logo.svg.png";
 
   function setChatInput(e) {
     chatInput = e.target.value;
-    C = chatInput;
-    console.log(C);
     console.log(chatInput);
 
     // console.log(e.target.value);
@@ -44,7 +41,6 @@ export default function Sidebar() {
 
   const handleAdd = (e) => {
     console.log(chatInput);
-    console.log(C);
     if (chatInput != null) {
       // db.collection("chats").add({
       //   chatName: chatInput,
